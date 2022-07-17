@@ -1,0 +1,156 @@
+/* 
+animation-iteration-count:infinite;
+animation-direction:normal => [ Defult Value ]
+animation-delay
+animation-fill-mode: None => [ Defult Value ]
+animation-duration:5s;
+animation-play-state:running => [ Defult Value ]
+animation : [ Name , durection , timming function , delay , iteration count , direction ]
+*/
+*{
+    box-sizing: border-box;
+}
+.parent {
+    height: 70vh; 
+    display:flex;
+    justify-content: space-evenly;
+}
+.e {
+    display: grid;
+    grid-template-columns: 70px repeat(5,70px);
+    grid-template-rows: 70px repeat(6,70px);
+    height:90vh;
+    width:40%;
+    position: relative;
+    justify-content: center;
+}
+.e::before {
+    content: '';
+    width:45px;
+    height:45px;
+    background-color: orange;
+    position: absolute;
+    left: 413px;
+    top: 12px;
+    animation-name: move-e;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-e {
+    0% {
+        transform: translate(0,0);
+    }
+    10% {
+        transform: translate(-340px,0);
+    }
+    20% {
+        transform: translate(-340px,210px);
+    }
+    30% {
+        transform: translate(0px,210px);
+    }
+    40% {
+        transform: translate(-340px,210px);
+    }
+    50% {
+        transform: translate(-340px,420px);
+    }
+    60% {
+        transform: translate(0px,420px);
+    }
+    70% {
+        transform: translate(0px,420px);
+    }
+    80% {
+        transform: translate(-340px,420px);
+    }
+    90% {
+        transform: translate(-340px,0px);
+    }
+    100% {
+        transform: translate(0px,0px);
+    }
+
+}
+.parent .e div {
+    background-color: #27282c;
+}
+.clild1 {
+    grid-column: 1/-1;
+}
+.clild2 {
+    grid-column: 1/2;
+    grid-row: 2/8;
+}
+.clild3 {
+    grid-column: 2/-1;
+    grid-row: 4/5;
+}
+.clild4 {
+    grid-column: 2/-1;
+    grid-row: 7/8;
+}
+/*  START L */
+.l {
+    display: grid;
+    grid-template-columns: 70px repeat(5,70px);
+    grid-template-rows: 70px repeat(6,70px);
+    height:90vh;
+    width:40%;
+    position: relative;
+}
+.parent .l div {
+    background-color: #27282c;
+}
+.l1 {
+grid-column: 1/2;
+grid-row: 1/8;
+}
+.l2 {
+    grid-column: 2/-1;
+    grid-row: 7/8;
+}
+.l::before {
+    content: '';
+    width:45px;
+    height:45px;
+    background-color: orange;
+    position: absolute;
+    bottom: 95px;
+    right: 135px;
+    animation-name: move-l;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-timing-function: linear;
+    animation-duration: reverse;
+    opacity: 0;
+}
+@keyframes move-l {
+
+    0% {
+        transform: translate(0px,0px);
+        opacity: 1;
+    }
+25% {
+    transform: translate(-346px,0px);
+}
+
+    90% {
+        transform: translate(-349px,-420px);
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-349px,-420px);
+    }
+}
+h1 {
+font-size: 30px;
+color:#27282c;
+text-align: center;
+margin-top: 100px;
+}
